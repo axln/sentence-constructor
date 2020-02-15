@@ -14,20 +14,23 @@
   "present": {
     "simple": {
       "alt_name": "indefinite",
+      "aux": "do",
+      "aux_replace": "be",
       "types": {
         "affirmative": {
           "sequence": ["subject", "verb", "object"],
           "end": "."
         },
         "negative": {
-          "sequence": ["subject", "aux", "not", "verb", "object"],
-          "aux": "do",
-          "aux_replace": "be",
+          "sequence": ["subject", "aux", "ot", "verb", "object"],
           "end": "."
         },
         "interrogative": {
           "sequence": ["aux", "subject", "verb", "object"],
-          "aux_replace": "be",
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux", "subject", "not", "verb", "object"],
           "end": "?"
         }
       }
