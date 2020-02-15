@@ -1,0 +1,38 @@
+{
+  "past": {
+    "simple": {
+      "alt_name": "indefinite"
+    },
+    "perfect": {
+    },
+    "continuous": {
+      "alt_name": "progressive"
+    },
+    "perfect_continuous": {
+    }
+  },
+  "present": {
+    "simple": {
+      "alt_name": "indefinite"
+    },
+    "perfect": {
+    },
+    "continuous": {
+      "alt_name": "progressive"
+    },
+    "perfect_continuous": {
+    }
+  },
+  "future": {
+    "simple": {
+      "alt_name": "indefinite"
+    },
+    "perfect": {
+    },
+    "continuous": {
+      "alt_name": "progressive"
+    },
+    "perfect_continuous": {
+    }
+  }
+}
