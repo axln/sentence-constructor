@@ -1,0 +1,13 @@
+{
+  "name": "phrase-generator",
+  "version": "0.1.0-dev",
+  "description": "English trainer phrase generator",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": "git@github.com:axln/phrase-generator.git",
+  "author": "Alexey Nesterenko <alexei.ne@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
