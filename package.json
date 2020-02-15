@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "build": ""
+    "build": "browserify src/app.js -o ./page/script.js"
   },
   "repository": "git@github.com:axln/phrase-generator.git",
   "author": "Alexey Nesterenko <alexei.ne@gmail.com>",
