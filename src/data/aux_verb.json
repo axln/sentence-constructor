@@ -1,0 +1,72 @@
+[
+  {
+    "infinitive": "be",
+    "past": {
+      "1": {
+        "singular": "was",
+        "plural": "were"
+      },
+      "2": {
+        "singular": "were",
+        "plural": "were"
+      },
+      "3": {
+        "singular": "was",
+        "plural": "were"
+      }
+    },
+    "present":  {
+      "1": {
+        "singular": "am",
+        "plural": "are"
+      },
+      "2": {
+        "singular": "are",
+        "plural": "are"
+      },
+      "3": {
+        "singular": "is",
+        "plural": "are"
+      }
+    },
+    "future":  "will be"
+  },
+  {
+    "infinitive": "do",
+    "past": "did",
+    "present": {
+      "1": {
+        "singular": "do",
+        "plural": "do"
+      },
+      "2": {
+        "singular": "do",
+        "plural": "do"
+      },
+      "3": {
+        "singular": "does",
+        "plural": "do"
+      }
+    },
+    "future": "will do"
+  },
+  {
+    "infinitive": "have",
+    "past": "had",
+    "present": {
+      "1": {
+        "singular": "have",
+        "plural": "have"
+      },
+      "2": {
+        "singular": "have",
+        "plural": "have"
+      },
+      "3": {
+        "singular": "has",
+        "plural": "have"
+      }
+    },
+    "future": "will have"
+  }
+]
