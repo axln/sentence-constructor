@@ -3,22 +3,39 @@
     "simple": {
       "alt_name": "indefinite"
     },
-    "perfect": {
-    },
     "continuous": {
       "alt_name": "progressive"
+    },
+    "perfect": {
     },
     "perfect_continuous": {
     }
   },
   "present": {
     "simple": {
-      "alt_name": "indefinite"
-    },
-    "perfect": {
+      "alt_name": "indefinite",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "verb", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux", "not", "verb", "object"],
+          "aux": "do",
+          "aux_replace": "be",
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux", "subject", "verb", "object"],
+          "aux_replace": "be",
+          "end": "?"
+        }
+      }
     },
     "continuous": {
       "alt_name": "progressive"
+    },
+    "perfect": {
     },
     "perfect_continuous": {
     }
@@ -27,10 +44,10 @@
     "simple": {
       "alt_name": "indefinite"
     },
-    "perfect": {
-    },
     "continuous": {
       "alt_name": "progressive"
+    },
+    "perfect": {
     },
     "perfect_continuous": {
     }

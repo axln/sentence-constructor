@@ -1,34 +1,34 @@
 [
   {
     "infinitive": "be",
-    "past": {
-      "1": {
+    "past": [
+      {
         "singular": "was",
         "plural": "were"
       },
-      "2": {
+      {
         "singular": "were",
         "plural": "were"
       },
-      "3": {
+      {
         "singular": "was",
         "plural": "were"
       }
-    },
-    "present":  {
-      "1": {
+    ],
+    "present":  [
+      {
         "singular": "am",
         "plural": "are"
       },
-      "2": {
+      {
         "singular": "are",
         "plural": "are"
       },
-      "3": {
+      {
         "singular": "is",
         "plural": "are"
       }
-    },
+    ],
     "future":  "will be"
   },
   {
