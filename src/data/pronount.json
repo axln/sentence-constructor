@@ -1,0 +1,94 @@
+[
+  {
+    "spelling": {
+      "subject": "I",
+      "object": "me",
+      "possessive_adjective": "my",
+      "possessive_pronoun": "mine",
+      "reflexive": "myself"
+    },
+    "person": 1,
+    "grammarNumber": "singular"
+  },
+  {
+    "spelling": {
+      "subject": "we",
+      "object": "us",
+      "possessive_adjective": "our",
+      "possessive_pronoun": "ours",
+      "reflexive": "ourselves"
+    },
+    "person": 1,
+    "grammarNumber": "plural"
+  },
+  {
+    "spelling": {
+      "subject": "you",
+      "object": "you",
+      "possessive_adjective": "your",
+      "possessive_pronoun": "yours",
+      "reflexive": "yourself"
+    },
+    "person": 2,
+    "grammarNumber": "singular"
+  },
+  {
+    "spelling": {
+      "subject": "you",
+      "object": "you",
+      "possessive_adjective": "your",
+      "possessive_pronoun": "yours",
+      "reflexive": "yourselves"
+    },
+    "person": 2,
+    "grammarNumber": "plural"
+  },
+  {
+    "spelling": {
+      "subject": "he",
+      "object": "him",
+      "possessive_adjective": "his",
+      "possessive_pronoun": "his",
+      "reflexive": "himself"
+    },
+    "person": 3,
+    "grammarNumber": "singular",
+    "gender": "masculine"
+  },
+  {
+    "spelling": {
+      "subject": "she",
+      "object": "her",
+      "possessive_adjective": "her",
+      "possessive_pronoun": "hers",
+      "reflexive": "herself"
+    },
+    "person": 3,
+    "grammarNumber": "singular",
+    "gender": "feminine"
+  },
+  {
+    "spelling": {
+      "subject": "it",
+      "object": "it",
+      "possessive_adjective": "its",
+      "possessive_pronoun": null,
+      "reflexive": "itself"
+    },
+    "person": 3,
+    "grammarNumber": "singular",
+    "gender": "neuter"
+  },
+  {
+    "spelling": {
+      "subject": "they",
+      "object": "them",
+      "possessive_adjective": "their",
+      "possessive_pronoun": "theirs",
+      "reflexive": "themselves"
+    },
+    "person": 3,
+    "grammarNumber": "plural",
+    "gender": "epicene"
+  }
+]
