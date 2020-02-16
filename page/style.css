@@ -1,9 +1,21 @@
-body {
+body, select {
 	font-family: Arial, sans-serif;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 h1 {
 	font-size: 24px;
 	font-weight: normal;
+}
+
+#tense {
+	width: 100px;
+}
+
+#aspect {
+	width: 250px;
+}
+
+#type {
+	width: 180px;
 }

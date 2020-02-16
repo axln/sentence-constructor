@@ -4,7 +4,7 @@
   "description": "English trainer phrase generator",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "watch": "watchify src/app.js -o ./page/script.js",
     "build": "browserify src/app.js -o ./page/script.js"
   },
   "repository": "git@github.com:axln/phrase-generator.git",
@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "browserify": "^16.5.0"
+    "browserify": "^16.5.0",
+    "watchify": "^3.11.1"
   }
 }
