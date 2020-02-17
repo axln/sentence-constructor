@@ -2,10 +2,10 @@
   "name": "phrase-generator",
   "version": "0.1.0-dev",
   "description": "English trainer phrase generator",
-  "main": "src/app.js",
+  "main": "saved/app.js",
   "scripts": {
-    "watch": "watchify src/app.js -o ./page/script.js",
-    "build": "browserify src/app.js -o ./page/script.js"
+    "watch": "watchify src/entry.js -d -o ./page/script.js",
+    "build": "browserify src/entry.js -o ./page/script.js"
   },
   "repository": "git@github.com:axln/phrase-generator.git",
   "author": "Alexey Nesterenko <alexei.ne@gmail.com>",

@@ -8,11 +8,25 @@
 </head>
 <body>
     <h1>Sentence Constructor</h1>
-    <div>Tense:
+    <div class="controls">
+        Tense:
         <select id="tense"></select>
         <select id="aspect"></select>
         Sentence type:
         <select id="type"></select>
     </div>
+
+    <div class="controls">
+        Pronoun:
+        <select id="pronoun"></select>
+        Verb:
+        <select id="verb"></select>
+        Object:
+        <input id="object" type="text" />
+    </div>
+    <div class="controls">
+        <input type="checkbox" id="contract"><label for="contract"> Allow contractions</label>
+    </div>
+    <div id="sentence"></div>
 </body>
 </html>

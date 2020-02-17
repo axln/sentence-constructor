@@ -19,3 +19,23 @@ h1 {
 #type {
 	width: 180px;
 }
+
+#pronoun {
+	width: 100px;
+}
+
+#verb {
+	width: 100px;
+}
+
+#object {
+	width: 323px;
+}
+
+.controls {
+	margin: 10px 0;
+}
+#sentence {
+	margin: 20px 0;
+	font-size: 22px;
+}

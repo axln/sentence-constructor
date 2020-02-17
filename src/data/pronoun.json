@@ -1,5 +1,5 @@
-[
-  {
+{
+  "I": {
     "spelling": {
       "subject": "I",
       "object": "me",
@@ -10,7 +10,7 @@
     "person": 1,
     "grammarNumber": "singular"
   },
-  {
+  "we": {
     "spelling": {
       "subject": "we",
       "object": "us",
@@ -21,7 +21,7 @@
     "person": 1,
     "grammarNumber": "plural"
   },
-  {
+  "you_singular": {
     "spelling": {
       "subject": "you",
       "object": "you",
@@ -32,7 +32,7 @@
     "person": 2,
     "grammarNumber": "singular"
   },
-  {
+  "you_plural": {
     "spelling": {
       "subject": "you",
       "object": "you",
@@ -43,7 +43,7 @@
     "person": 2,
     "grammarNumber": "plural"
   },
-  {
+  "he": {
     "spelling": {
       "subject": "he",
       "object": "him",
@@ -55,7 +55,7 @@
     "grammarNumber": "singular",
     "gender": "masculine"
   },
-  {
+  "she": {
     "spelling": {
       "subject": "she",
       "object": "her",
@@ -67,7 +67,7 @@
     "grammarNumber": "singular",
     "gender": "feminine"
   },
-  {
+  "it": {
     "spelling": {
       "subject": "it",
       "object": "it",
@@ -79,7 +79,7 @@
     "grammarNumber": "singular",
     "gender": "neuter"
   },
-  {
+  "they": {
     "spelling": {
       "subject": "they",
       "object": "them",
@@ -91,4 +91,4 @@
     "grammarNumber": "plural",
     "gender": "epicene"
   }
-]
+}

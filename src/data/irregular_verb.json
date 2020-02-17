@@ -1,483 +1,386 @@
-[
-  [
-    "be",
-    ["was", "were"],
+{
+  "be": [
+    ["was","were"],
     "been"
   ],
-  [
-    "beat",
+  "beat": [
     "beat",
     "beaten"
   ],
-  [
-    "become",
+  "become": [
     "became",
     "become"
   ],
-  [
-    "begin",
+  "begin": [
     "began",
     "begun"
   ],
-  [
-    "blow",
+  "blow": [
     "blew",
     "blown"
   ],
-  [
-    "break",
+  "break": [
     "broke",
     "broken"
   ],
-  [
-    "bring",
+  "bring": [
     "brought",
     "brought"
   ],
-  [
-    "build",
+  "build": [
     "built",
     "built"
   ],
-  [
-    "burst",
+  "burst": [
     "burst",
     "burst"
   ],
-  [
-    "buy",
+  "buy": [
     "bought",
     "bought"
   ],
-  [
-    "catch",
+  "catch": [
     "caught",
     "caught"
   ],
-  [
-    "choose",
+  "choose": [
     "chose",
     "chosen"
   ],
-  [
-    "come",
+  "come": [
     "came",
     "come"
   ],
-  [
-    "cost",
+  "cost": [
     "cost",
     "cost"
   ],
-  [
-    "cut",
+  "cut": [
     "cut",
     "cut"
   ],
-  [
-    "deal",
+  "deal": [
     "dealt",
     "dealt"
   ],
-  [
-    "do",
+  "do": [
     "did",
     "done"
   ],
-  [
-    "draw",
+  "draw": [
     "drew",
     "drawn"
   ],
-  [
-    "drink",
+  "drink": [
     "drank",
     "drunk"
   ],
-  [
-    "drive",
+  "drive": [
     "drove",
     "driven"
   ],
-  [
-    "eat",
+  "eat": [
     "ate",
     "eaten"
   ],
-  [
-    "fall",
+  "fall": [
     "fell",
     "fallen"
   ],
-  [
-    "feed",
+  "feed": [
     "fed",
     "fed"
   ],
-  [
-    "feel",
+  "feel": [
     "felt",
     "felt"
   ],
-  [
-    "fight",
+  "fight": [
     "fought",
     "fought"
   ],
-  [
-    "find",
+  "find": [
     "found",
     "found"
   ],
-  [
-    "fly",
+  "fly": [
     "flew",
     "flown"
   ],
-  [
-    "forget",
+  "forget": [
     "forgot",
     "forgotten"
   ],
-  [
-    "freeze",
+  "freeze": [
     "froze",
     "frozen"
   ],
-  [
-    "get",
+  "get": [
     "got",
-    "got",
-    "gotten "
+    "gotten"
   ],
-  [
-    "give",
+  "give": [
     "gave",
     "given"
   ],
-  [
-    "go",
+  "go": [
     "went",
     "gone"
   ],
-  [
-    "grow",
+  "grow": [
     "grew",
     "grown"
   ],
-  [
-    "hang",
+  "hang": [
     "hung",
     "hung"
   ],
-  [
-    "have",
+  "have": [
     "had",
     "had"
   ],
-  [
-    "hear",
+  "hear": [
     "heard",
     "heard"
   ],
-  [
-    "hide",
+  "hide": [
     "hid",
     "hidden"
   ],
-  [
-    "hit",
+  "hit": [
     "hit",
     "hit"
   ],
-  [
-    "hold",
+  "hold": [
     "held",
     "held"
   ],
-  [
-    "hurt",
+  "hurt": [
     "hurt",
     "hurt"
   ],
-  [
-    "keep",
+  "keep": [
     "kept",
     "kept"
   ],
-  [
-    "know",
+  "know": [
     "knew",
     "known"
   ],
-  [
-    "lay",
+  "lay": [
     "laid",
     "laid"
   ],
-  [
-    "lead",
+  "lead": [
     "led",
     "led"
   ],
-  [
-    "leave",
+  "leave": [
     "left",
     "left"
   ],
-  [
-    "lend",
+  "lend": [
     "lent",
     "lent"
   ],
-  [
-    "let",
+  "let": [
     "let",
     "let"
   ],
-  [
-    "lie",
+  "lie": [
     "lay",
     "lain"
   ],
-  [
-    "lose",
+  "lose": [
     "lost",
     "lost"
   ],
-  [
-    "make",
+  "make": [
     "made",
     "made"
   ],
-  [
-    "mean",
+  "mean": [
     "meant",
     "meant"
   ],
-  [
-    "meet",
+  "meet": [
     "met",
     "met"
   ],
-  [
-    "pay",
+  "pay": [
     "paid",
     "paid"
   ],
-  [
-    "put",
+  "put": [
     "put",
     "put"
   ],
-  [
-    "read",
+  "read": [
     "read",
     "read"
   ],
-  [
-    "ride",
+  "ride": [
     "rode",
     "ridden"
   ],
-  [
-    "ring",
+  "ring": [
     "rang",
     "rung"
   ],
-  [
-    "rise",
+  "rise": [
     "rose",
     "risen"
   ],
-  [
-    "run",
+  "run": [
     "ran",
     "run"
   ],
-  [
-    "say",
+  "say": [
     "said",
     "said"
   ],
-  [
-    "see",
+  "see": [
     "saw",
     "seen"
   ],
-  [
-    "sell",
+  "sell": [
     "sold",
     "sold"
   ],
-  [
-    "send",
+  "send": [
     "sent",
     "sent"
   ],
-  [
-    "set",
+  "set": [
     "set",
     "set"
   ],
-  [
-    "shake",
+  "shake": [
     "shook",
     "shaken"
   ],
-  [
-    "steal",
+  "steal": [
     "stole",
     "stolen"
   ],
-  [
-    "shine",
+  "shine": [
     "shone",
     "shone"
   ],
-  [
-    "shoot",
+  "shoot": [
     "shot",
     "shot"
   ],
-  [
-    "show",
+  "show": [
     "showed",
     "shown"
   ],
-  [
-    "shut",
+  "shut": [
     "shut",
     "shut"
   ],
-  [
-    "sing",
+  "sing": [
     "sang",
     "sung"
   ],
-  [
-    "sink",
+  "sink": [
     "sank",
     "sunk"
   ],
-  [
-    "sit",
+  "sit": [
     "sat",
     "sat"
   ],
-  [
-    "sleep",
+  "sleep": [
     "slept",
     "slept"
   ],
-  [
-    "slide",
+  "slide": [
     "slid",
     "slid"
   ],
-  [
-    "speak",
+  "speak": [
     "spoke",
     "spoken"
   ],
-  [
-    "spend",
+  "spend": [
     "spent",
     "spent"
   ],
-  [
-    "spring",
+  "spring": [
     "sprang",
     "sprung"
   ],
-  [
-    "stand",
+  "stand": [
     "stood",
     "stood"
   ],
-  [
-    "stick",
+  "stick": [
     "stuck",
     "stuck"
   ],
-  [
-    "swear",
+  "swear": [
     "swore",
     "sworn"
   ],
-  [
-    "sweep",
+  "sweep": [
     "swept",
     "swept"
   ],
-  [
-    "swim",
+  "swim": [
     "swam",
     "swum"
   ],
-  [
-    "swing",
+  "swing": [
     "swung",
     "swung"
   ],
-  [
-    "take",
+  "take": [
     "took",
     "taken"
   ],
-  [
-    "teach",
+  "teach": [
     "taught",
     "taught"
   ],
-  [
-    "tear",
+  "tear": [
     "tore",
     "torn"
   ],
-  [
-    "tell",
+  "tell": [
     "told",
     "told"
   ],
-  [
-    "think",
+  "think": [
     "thought",
     "thought"
   ],
-  [
-    "throw",
+  "throw": [
     "threw",
     "thrown"
   ],
-  [
-    "understand",
+  "understand": [
     "understood",
     "understood"
   ],
-  [
-    "wake",
+  "wake": [
     "woke",
     "woken"
   ],
-  [
-    "wear",
+  "wear": [
     "wore",
     "worn"
   ],
-  [
-    "weave",
+  "weave": [
     "wove",
     "woven"
   ],
-  [
-    "win",
+  "win": [
     "won",
     "won"
   ],
-  [
-    "write",
+  "write": [
     "wrote",
     "written"
   ]
-]
+}

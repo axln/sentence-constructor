@@ -1,8 +1,45 @@
+const irregularVerbs = require("../data/irregular_verb");
+const verbs = require("../data/verb");
+
 module.exports = {
-    renderSentence: (parts, tense, type) => {
-        return "[render result]"
+    capitalize: (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     },
-    capitalize: (string) => {
-        return string.replace('_', ' ').split(' ').map(str => str.charAt(0).toUpperCase() + str.slice(1)).join(' ');
+    createOption(title, value) {
+        const opt = document.createElement('option');
+        opt.innerHTML = title;
+        opt.value = value;
+        return opt;
+    },
+
+    getVerbForPronoun(verb, pronoun, tense) {
+        if (typeof verb == 'object') {
+            let item = verb[tense];
+            if (typeof item == 'string') {
+                return item;
+            }
+            item = item[pronoun.person - 1];
+            if (typeof item == 'string') {
+                return item;
+            }
+            return item[pronoun.grammarNumber];
+        } else {
+            switch (tense) {
+                case "present":
+                    if (pronoun.person === 3 && pronoun.grammarNumber === 'singular') {
+                        return verbs[verb][0]
+                    } else {
+                        return verb;
+                    }
+                case "past":
+                    if (verb in irregularVerbs) {
+                        return irregularVerbs[verb][0];
+                    } else {
+                        return verb + 'ed';
+                    }
+                default:
+                    return verb;
+            }
+        }
     }
 };

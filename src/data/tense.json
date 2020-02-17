@@ -1,61 +1,149 @@
 {
   "past": {
     "simple": {
-      "alt_name": "indefinite"
-    },
-    "continuous": {
-      "alt_name": "progressive"
-    },
-    "perfect": {
-    },
-    "perfect_continuous": {
-      "alt_name": "progressive"
-    }
-  },
-  "present": {
-    "simple": {
-      "alt_name": "indefinite",
       "aux": "do",
       "aux_replace": "be",
       "types": {
         "affirmative": {
-          "sequence": ["subject", "verb", "object"],
+          "sequence": ["subject", "verb:past", "object"],
           "end": "."
         },
         "negative": {
-          "sequence": ["subject", "aux", "ot", "verb", "object"],
+          "sequence": ["subject", "aux:past", "not", "verb", "object"],
           "end": "."
         },
         "interrogative": {
-          "sequence": ["aux", "subject", "verb", "object"],
+          "sequence": ["aux:past", "subject", "verb", "object"],
           "end": "?"
         },
         "negative_interrogative": {
-          "sequence": ["aux", "subject", "not", "verb", "object"],
+          "sequence": ["aux:past", "subject", "not", "verb", "object"],
           "end": "?"
         }
       }
     },
     "continuous": {
-      "alt_name": "progressive"
+      "aux": "be",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:past","verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:past","not","verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:past", "subject", "verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:past", "subject", "not", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
     },
     "perfect": {
     },
     "perfect_continuous": {
-      "alt_name": "progressive"
+
+    }
+  },
+  "present": {
+    "simple": {
+      "aux": "do",
+      "aux_replace": "be",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "verb:present", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:present", "not", "verb", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:present", "subject", "verb", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:present", "subject", "not", "verb", "object"],
+          "end": "?"
+        }
+      }
+    },
+    "continuous": {
+      "aux": "be",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:present","verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:present","not","verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:present", "subject", "verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:present", "subject", "not", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
+    },
+    "perfect": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:present","verb:v3", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:present","not","verb:v3", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:present", "subject", "verb:v3", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:present", "subject", "not", "verb:v3", "object"],
+          "end": "?"
+        }
+      }
+    },
+    "perfect_continuous": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:present", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:present","not", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:present", "subject", "been","verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:present", "subject", "not", "been", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
     }
   },
   "future": {
     "simple": {
-      "alt_name": "indefinite"
     },
     "continuous": {
-      "alt_name": "progressive"
     },
     "perfect": {
     },
     "perfect_continuous": {
-      "alt_name": "progressive"
     }
   }
 }
