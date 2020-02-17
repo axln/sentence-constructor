@@ -39,3 +39,7 @@ h1 {
 	margin: 20px 0;
 	font-size: 22px;
 }
+
+.verbOption {
+	background-color: lightblue;
+}

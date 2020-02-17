@@ -4,6 +4,7 @@ const Sentence = require('./Sentence');
 const pronouns = require("../data/pronoun");
 const tenses = require("../data/tense");
 const verbs = require("../data/verb");
+const irregularVerbs = require("../data/irregular_verb");
 
 const aspects = {
     simple: "Simple (Indefinite)",
@@ -93,6 +94,10 @@ class App {
     fillVerbCombo() {
         for (let value in verbs) {
             const option = Helper.createOption(value, value);
+            if (value in irregularVerbs) {
+                option.className = 'verbOption';
+            }
+
             this.verbCombo.appendChild(option);
         }
     }

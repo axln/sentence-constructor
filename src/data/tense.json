@@ -44,9 +44,46 @@
       }
     },
     "perfect": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:past","verb:v3", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:past","not","verb:v3", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:past", "subject", "verb:v3", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:past", "subject", "not", "verb:v3", "object"],
+          "end": "?"
+        }
+      }
     },
     "perfect_continuous": {
-
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "aux:past", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "aux:past","not", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["aux:past", "subject", "been","verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["aux:past", "subject", "not", "been", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
     }
   },
   "present": {
@@ -138,12 +175,89 @@
   },
   "future": {
     "simple": {
+      "aux": "do",
+      "aux_replace": "be",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "will", "verb", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "will", "not", "verb", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["will", "subject", "verb", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["will", "subject", "not", "verb", "object"],
+          "end": "?"
+        }
+      }
     },
     "continuous": {
+      "aux": "be",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "will", "aux", "verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "will", "not", "aux", "verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["will", "subject", "aux", "verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["will", "subject", "not", "aux", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
     },
     "perfect": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "will", "aux", "verb:v3", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "will", "not", "aux", "verb:v3", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["will", "subject", "aux", "verb:v3", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["will", "subject", "not", "aux", "verb:v3", "object"],
+          "end": "?"
+        }
+      }
     },
     "perfect_continuous": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "sequence": ["subject", "will", "aux", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "negative": {
+          "sequence": ["subject", "will", "not", "aux", "been", "verb:ing", "object"],
+          "end": "."
+        },
+        "interrogative": {
+          "sequence": ["will", "subject", "aux", "been", "verb:ing", "object"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "sequence": ["will", "subject", "not", "aux", "been", "verb:ing", "object"],
+          "end": "?"
+        }
+      }
     }
   }
 }

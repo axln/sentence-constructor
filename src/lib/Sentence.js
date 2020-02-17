@@ -35,6 +35,13 @@ class Sentence {
                     }
                     return verb + 'ed';
                 }
+            case "future":
+                if (verb in specialVerbs) {
+                    const specialVerb = specialVerbs[verb];
+                    return Helper.getVerbForPronoun(specialVerb, subject, "future");
+                } else {
+                    return 'will' + verb;
+                }
             case "v3":
                 if (verb in irregularVerbs) {
                     return irregularVerbs[verb][1];
@@ -60,7 +67,7 @@ class Sentence {
             }
             const item =  this.typeInfo.sequence[i];
             const [name, param] = item.split(':');
-            switch(name) {
+            switch (name) {
                 case "subject":
                     let subject = this.parts.subject;
                     text += subject.spelling.subject;
@@ -73,13 +80,20 @@ class Sentence {
                     }
                     break;
                 case "object":
-                    text += this.parts.object;
+                    if (this.parts.object !== '') {
+                        text += this.parts.object;
+                    } else {
+                        text = text.trim();
+                    }
                     break;
                 case "not":
                     text += "not";
                     break;
                 case "been":
                     text += "been";
+                    break;
+                case "will":
+                    text += "will";
                     break;
                 case "aux":
                     let auxVerb = this.tenseInfo.aux;

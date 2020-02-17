@@ -8,5 +8,9 @@
   ["does not", "doesn't"],
   ["did not", "didn't"],
   ["have not", "haven't"],
-  ["has not", "hasn't"]
+  ["has not", "hasn't"],
+  ["had  not", "hadn't"],
+  ["will not", "won't"],
+  ["I will", "I'll"],
+  ["We will", "we'll"]
 ]
