@@ -46,7 +46,7 @@ class App {
         this.fillTypeCombo();
         this.fillPronounCombo();
         this.fillVerbCombo();
-        this.objectText.value = 'a doctor';
+        this.objectText.value = 'a teacher';
 
         this.tenseCombo.selectedIndex = 1; // present
         this.verbCombo.selectedIndex = 1; // be
