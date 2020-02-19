@@ -1,4 +1,4 @@
-body, select {
+body, select, input {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 }
@@ -37,6 +37,7 @@ h1 {
 }
 #sentence {
 	margin: 20px 0;
+	font-family: monospace;
 	font-size: 22px;
 }
 
@@ -44,6 +45,26 @@ h1 {
 	background-color: lightblue;
 }
 
+span {
+	padding: 2px;
+}
+
 .aux {
 	background-color: lightskyblue;
+}
+
+.not {
+	background-color: lightgray;
+}
+
+.verb {
+	background-color: lightgreen;
+}
+
+.pronoun {
+	background-color: lightpink;
+}
+
+.ctr {
+	background-color: bisque;
 }

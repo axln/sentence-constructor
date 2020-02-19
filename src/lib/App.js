@@ -118,6 +118,14 @@ class App {
         const tenseInfo = tenses[tense][aspect];
         const sentence = new Sentence(tenseInfo, type, parts, voice, allowContractions);
         this.sentenceText.innerHTML = sentence.render();
+        for (let i = 0; i < this.sentenceText.childNodes.length; ++i) {
+            const node = this.sentenceText.childNodes[i];
+            if (node.nodeType !== 1) {
+                continue;
+            }
+            node.textContent = Helper.capitalize(node.textContent);
+            break;
+        }
     }
 }
 

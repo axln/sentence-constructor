@@ -41,5 +41,21 @@ module.exports = {
                     return verb;
             }
         }
+    },
+
+    preprocessContractions(contractions) {
+        for (let i = 0; i < contractions.length; ++i) {
+            let [pattern, replace] = contractions[i];
+            const process = text => {
+                return text.split(" ").map(part => {
+                    let [word, type] = part.split(":");
+                    return `<span class="${type}">${word}</span>`
+                }).join(" ");
+            };
+            pattern = process(pattern);
+            replace = process(replace);
+            contractions[i] = [pattern, replace];
+        }
+        return contractions;
     }
 };

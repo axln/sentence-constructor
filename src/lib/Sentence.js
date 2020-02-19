@@ -1,9 +1,9 @@
 const specialVerbs   = require('../data/special_verb');
 const verbs          = require('../data/verb');
 const irregularVerbs = require('../data/irregular_verb');
-const contractions   = require('../data/contraction.json');
 const Helper         = require("./Helper");
 
+const contractions = Helper.preprocessContractions(require('../data/contraction.json'));
 
 class Sentence {
     constructor(tenseInfo, type, parts, voice, allowContractions) {
@@ -71,6 +71,7 @@ class Sentence {
     generateText(parts, sequenceType) {
         let text = '';
         let skipVerb = false;
+        let auxPresent = false;
         const sequence = this.typeInfo[sequenceType];
 
         for (let i = 0; i < sequence.length; ++i) {
@@ -82,17 +83,26 @@ class Sentence {
             switch (name) {
                 case "subject":
                     let subject = parts.subject;
-                    text += subject.spelling.subject;
+                    text += `<span class="pronoun">${subject.spelling.subject}</span>`;
                     break;
                 case "verb":
                     if (skipVerb) {
                         text = text.trim();
                     } else {
-                        text += this.renderVerb(parts.verb, param, parts.subject);
+                        if (parts.verb === this.tenseInfo.aux_replace && !auxPresent) {
+                            text += `<span class="aux">${this.renderVerb(parts.verb, param, parts.subject)}</span>`;
+                        } else {
+                            text += `<span class="verb">${this.renderVerb(parts.verb, param, parts.subject)}</span>`;
+                        }
                     }
                     break;
                 case "be":
-                    text += this.renderVerb("be", param, parts.subject);
+                    if (parts.verb === this.tenseInfo.aux_replace) {
+                        auxPresent = true;
+                        text += `<span class="aux">${this.renderVerb("be", param, parts.subject)}</span>`;
+                    } else {
+                        text += `<span class="aux">${this.renderVerb("be", param, parts.subject)}</span>`;
+                    }
                     break;
                 case "object":
                     if (parts.object !== '') {
@@ -102,24 +112,33 @@ class Sentence {
                     }
                     break;
                 case "not":
-                    text += "not";
+                    text += `<span class="not">not</span>`;
                     break;
                 case "being":
-                    text += "being";
+                    if (param === "aux") {
+                        text += `<span class="aux">being</span>`;
+                    } else {
+                        text += `<span class="verb">being</span>`;
+                    }
                     break;
                 case "been":
-                    text += "been";
+                    if (param === 'aux') {
+                        text += `<span class="aux">been</span>`;
+                    } else {
+                        text += `<span class="verb">been</span>`;
+                    }
                     break;
                 case "will":
-                    text += "will";
+                    text += `<span class="aux">will</span>`;
                     break;
                 case "aux":
+                    auxPresent = true;
                     let auxVerb = this.tenseInfo.aux;
                     if (this.tenseInfo.aux_replace && parts.verb === this.tenseInfo.aux_replace) {
                         auxVerb = this.tenseInfo.aux_replace;
                         skipVerb = true;
                     }
-                    text += `${this.renderVerb(auxVerb, param, parts.subject)}`;
+                    text += `<span class="aux">${this.renderVerb(auxVerb, param, parts.subject)}</span>`;
                     break;
             }
         }
@@ -146,8 +165,19 @@ class Sentence {
 
             text = contractedText;
         }
-        return Helper.capitalize(text + this.typeInfo.end);
+        if (this.parts.object && this.parts.object.trim() !=='') {
+            text = text + ' ' + escapeHtml(this.parts.object);
+        }
+        return text + this.typeInfo.end;
+
     }
+}
+
+function escapeHtml(html){
+    var text = document.createTextNode(html);
+    var p = document.createElement('p');
+    p.appendChild(text);
+    return p.innerHTML;
 }
 
 module.exports = Sentence;
