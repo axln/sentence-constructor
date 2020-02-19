@@ -24,5 +24,6 @@
   ["they:pronoun are:aux", "they're:ctr"],
   ["you:pronoun are:aux", "you're:ctr"],
   ["I:pronoun have:aux", "I've:ctr"],
-  ["he:pronoun has:aux", "he's:ctr"]
+  ["he:pronoun has:aux", "he's:ctr"],
+  ["would:aux have:aux", "would've:ctr"]
 ]
