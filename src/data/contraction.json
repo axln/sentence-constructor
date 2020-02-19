@@ -1,12 +1,7 @@
 [
   ["I:pronoun am:aux", "I'm:ctr"],
-  ["he:pronoun is:aux", "he's:ctr"],
-  ["she:pronoun is:aux", "she's:ctr"],
-  ["it:pronoun is:aux", "it's:ctr"],
-  ["they:pronoun are:aux", "they're:ctr"],
-  ["you:pronoun are:aux", "you're:ctr"],
-  ["are:aux not:not", "aren't:ctr"],
   ["is:aux not:not", "isn't:ctr"],
+  ["are:aux not:not", "aren't:ctr"],
   ["was:aux not:not", "wasn't:ctr"],
   ["were:aux not:not", "weren't:ctr"],
   ["do:aux not:not", "don't:ctr"],
@@ -16,11 +11,18 @@
   ["has:aux not:not", "hasn't:ctr"],
   ["had:aux not:not", "hadn't:ctr"],
   ["will:aux not:not", "won't:ctr"],
+  ["would:aux not:not", "wouldn't:ctr"],
   ["I:pronoun will:aux", "I'll:ctr"],
   ["we:pronoun will:aux", "we'll:ctr"],
   ["he:pronoun will:aux", "he'll:ctr"],
   ["she:pronoun will:aux", "she'll:ctr"],
   ["it:pronoun will:aux", "it'll:ctr"],
   ["they:pronoun will:aux", "they'll:ctr"],
-  ["I:pronoun have:aux", "I've:ctr"]
+  ["he:pronoun is:aux", "he's:ctr"],
+  ["she:pronoun is:aux", "she's:ctr"],
+  ["it:pronoun is:aux", "it's:ctr"],
+  ["they:pronoun are:aux", "they're:ctr"],
+  ["you:pronoun are:aux", "you're:ctr"],
+  ["I:pronoun have:aux", "I've:ctr"],
+  ["he:pronoun has:aux", "he's:ctr"]
 ]

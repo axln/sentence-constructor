@@ -131,6 +131,9 @@ class Sentence {
                 case "will":
                     text += `<span class="aux">will</span>`;
                     break;
+                case "would":
+                    text += `<span class="aux">would</span>`;
+                    break;
                 case "aux":
                     auxPresent = true;
                     let auxVerb = this.tenseInfo.aux;
@@ -166,7 +169,7 @@ class Sentence {
             text = contractedText;
         }
         if (this.parts.object && this.parts.object.trim() !=='') {
-            text = text + ' ' + escapeHtml(this.parts.object);
+            text = text + ' ' + `<span class="object">${escapeHtml(this.parts.object)}</span>`;
         }
         return text + this.typeInfo.end;
 

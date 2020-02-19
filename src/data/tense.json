@@ -331,5 +331,116 @@
         }
       }
     }
+  },
+  "future_in_past": {
+    "simple": {
+      "aux": "do",
+      "aux_replace": "be",
+      "types": {
+        "affirmative": {
+          "active":  ["subject", "would",       "verb"],
+          "passive": ["subject", "would", "be:verb", "verb:v3"],
+          "end": "."
+        },
+        "negative": {
+          "active":  ["subject", "would", "not",       "verb"],
+          "passive": ["subject", "would", "not", "be", "verb:v3"],
+          "end": "."
+        },
+        "interrogative": {
+          "active":  ["would", "subject",       "verb"],
+          "passive": ["would", "subject", "be", "verb:v3"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "active":  ["would", "subject", "not",       "verb"],
+          "passive": ["would", "subject", "not", "be", "verb:v3"],
+          "active_contracted":  ["would", "not", "subject",       "verb"],
+          "passive_contracted": ["would", "not", "subject", "be", "verb:v3"],
+          "end": "?"
+        }
+      }
+    },
+    "continuous": {
+      "aux": "be",
+      "types": {
+        "affirmative": {
+          "active":  ["subject", "would", "aux",          "verb:ing"],
+          "passive": ["subject", "would", "aux", "being", "verb:v3"],
+          "end": "."
+        },
+        "negative": {
+          "active":  ["subject", "would", "not", "aux",          "verb:ing"],
+          "passive": ["subject", "would", "not", "aux", "being", "verb:v3"],
+          "end": "."
+        },
+        "interrogative": {
+          "active":  ["would", "subject", "aux",          "verb:ing"],
+          "passive": ["would", "subject", "aux", "being", "verb:v3"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "active":  ["would", "subject", "not", "aux",          "verb:ing"],
+          "passive": ["would", "subject", "not", "aux", "being", "verb:v3"],
+          "active_contracted":  ["would", "not", "subject", "aux",          "verb:ing"],
+          "passive_contracted": ["would", "not", "subject", "aux", "being", "verb:v3"],
+          "end": "?"
+        }
+      }
+    },
+    "perfect": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "active":  ["subject", "would", "aux",         "verb:v3"],
+          "passive": ["subject", "would", "aux", "been", "verb:v3"],
+          "end": "."
+        },
+        "negative": {
+          "active":  ["subject", "would", "not", "aux",         "verb:v3"],
+          "passive": ["subject", "would", "not", "aux", "been", "verb:v3"],
+          "end": "."
+        },
+        "interrogative": {
+          "active":  ["would", "subject", "aux",         "verb:v3"],
+          "passive": ["would", "subject", "aux", "been", "verb:v3"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "active":  ["would", "subject", "not", "aux",         "verb:v3"],
+          "passive": ["would", "subject", "not", "aux", "been", "verb:v3"],
+          "active_contracted":  ["would", "not", "subject", "aux",         "verb:v3"],
+          "passive_contracted": ["would", "not", "subject", "aux", "been", "verb:v3"],
+          "end": "?"
+        }
+      }
+    },
+    "perfect_continuous": {
+      "aux": "have",
+      "types": {
+        "affirmative": {
+          "active":  ["subject", "would", "aux", "been",          "verb:ing"],
+          "passive": ["subject", "would", "aux", "been", "being", "verb:v3"],
+          "end": "."
+        },
+        "negative": {
+          "active":  ["subject", "would", "not", "aux", "been",          "verb:ing"],
+          "passive": ["subject", "would", "not", "aux", "been", "being", "verb:v3"],
+          "end": "."
+        },
+        "interrogative": {
+          "active":  ["would", "subject", "aux", "been",          "verb:ing"],
+          "passive": ["would", "subject", "aux", "been", "being", "verb:v3"],
+          "end": "?"
+        },
+        "negative_interrogative": {
+          "active":  ["would", "subject", "not", "aux", "been",          "verb:ing"],
+          "passive": ["would", "subject", "not", "aux", "been", "being", "verb:v3"],
+          "active_contracted":  ["would", "not", "subject", "aux", "been",          "verb:ing"],
+          "passive_contracted": ["would", "not", "subject", "aux", "been", "being", "verb:v3"],
+          "end": "?"
+        }
+      }
+    }
   }
 }

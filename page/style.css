@@ -1,6 +1,6 @@
 body, select, input {
 	font-family: Arial, sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 h1 {
@@ -9,11 +9,11 @@ h1 {
 }
 
 #tense {
-	width: 100px;
+	width: 110pt;
 }
 
 #aspect {
-	width: 250px;
+	width: 240pt;
 }
 
 #type {
@@ -21,7 +21,7 @@ h1 {
 }
 
 #pronoun {
-	width: 100px;
+	width: 100pt;
 }
 
 #verb {
@@ -37,8 +37,8 @@ h1 {
 }
 #sentence {
 	margin: 20px 0;
-	font-family: monospace;
-	font-size: 22px;
+	/*font-family: monospace;*/
+	font-size: 46px;
 }
 
 .verbOption {
@@ -46,12 +46,9 @@ h1 {
 }
 
 span {
-	padding: 2px;
+
 }
 
-.aux {
-	background-color: lightskyblue;
-}
 
 .not {
 	background-color: lightgray;
@@ -61,10 +58,67 @@ span {
 	background-color: lightgreen;
 }
 
+#sentence > span {
+	display: inline-block;
+	text-align: center;
+	min-width: 60px;
+	padding: 12px 8px 4px;
+	position: relative;
+	border-radius: 5pt;
+}
+
+#sentence > span::before {
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	font-size: 13px;
+	font-family: sans-serif;
+}
+
 .pronoun {
 	background-color: lightpink;
 }
 
+.object {
+	background-color: cornsilk;
+}
+
+.pronoun::before {
+	content: "pronoun";
+	color: #c82842;
+}
+
+.aux {
+	background-color: lightskyblue;
+}
+
+.aux::before {
+	content: "aux verb";
+	color: darkblue;
+}
+
+.not::before {
+	content: "negation";
+	color: dimgrey;
+}
+
+.verb::before {
+	content: "verb";
+	color: green;
+}
+
+.object::before {
+	content: "object";
+	color: #6a5b1f;
+}
+
 .ctr {
 	background-color: bisque;
+	min-width: 60px;
+}
+
+.ctr::before {
+	content: "contraction";
+	color: #a48c6f;
 }

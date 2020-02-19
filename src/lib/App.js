@@ -15,8 +15,8 @@ const aspects = {
 
 const sentenceTypes = {
     affirmative: "Affirmative",
-    negative: "Negative",
     interrogative: "Interrogative",
+    negative: "Negative",
     negative_interrogative: "Negative Interrogative"
 };
 
@@ -108,7 +108,7 @@ class App {
     fillTenseCombo() {
         for (let tense in tenses) {
             const opt = document.createElement('option');
-            opt.innerHTML = Helper.capitalize(tense);
+            opt.innerHTML = Helper.capitalize(tense.replace(/_/g, " "));
             opt.value = tense;
             this.tenseCombo.appendChild(opt);
         }
