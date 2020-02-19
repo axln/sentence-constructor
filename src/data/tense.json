@@ -18,6 +18,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:past", "subject", "not", "verb", "object"],
+          "sequence_contracted": ["aux:past", "not", "subject", "verb", "object"],
           "end": "?"
         }
       }
@@ -39,6 +40,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:past", "subject", "not", "verb:ing", "object"],
+          "sequence_contracted": ["aux:past", "not", "subject", "verb:ing", "object"],
           "end": "?"
         }
       }
@@ -60,6 +62,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:past", "subject", "not", "verb:v3", "object"],
+          "sequence_contracted": ["aux:past", "not", "subject", "verb:v3", "object"],
           "end": "?"
         }
       }
@@ -81,6 +84,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:past", "subject", "not", "been", "verb:ing", "object"],
+          "sequence_contracted": ["aux:past", "not", "subject", "been", "verb:ing", "object"],
           "end": "?"
         }
       }
@@ -93,18 +97,23 @@
       "types": {
         "affirmative": {
           "sequence": ["subject", "verb:present", "object"],
+          "sequence_passive": ["subject", "be:present", "verb:v3", "object"],
           "end": "."
         },
         "negative": {
           "sequence": ["subject", "aux:present", "not", "verb", "object"],
+          "sequence_passive": ["subject", "be:present", "not", "verb:v3", "object"],
           "end": "."
         },
         "interrogative": {
           "sequence": ["aux:present", "subject", "verb", "object"],
+          "sequence_passive": ["be:present", "subject", "verb:v3", "object"],
           "end": "?"
         },
         "negative_interrogative": {
           "sequence": ["aux:present", "subject", "not", "verb", "object"],
+          "sequence_contracted": ["aux:present", "not", "subject", "verb", "object"],
+          "sequence_passive": ["be:present", "subject", "not", "verb:v3", "object"],
           "end": "?"
         }
       }
@@ -126,6 +135,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:present", "subject", "not", "verb:ing", "object"],
+          "sequence_contracted": ["aux:present", "not", "subject", "verb:ing", "object"],
           "end": "?"
         }
       }
@@ -147,6 +157,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:present", "subject", "not", "verb:v3", "object"],
+          "sequence_contracted": ["aux:present", "not", "subject", "verb:v3", "object"],
           "end": "?"
         }
       }
@@ -168,6 +179,7 @@
         },
         "negative_interrogative": {
           "sequence": ["aux:present", "subject", "not", "been", "verb:ing", "object"],
+          "sequence_contracted": ["aux:present",  "not", "subject", "been", "verb:ing", "object"],
           "end": "?"
         }
       }
@@ -192,6 +204,7 @@
         },
         "negative_interrogative": {
           "sequence": ["will", "subject", "not", "verb", "object"],
+          "sequence_contracted": ["will", "not", "subject", "verb", "object"],
           "end": "?"
         }
       }
@@ -213,6 +226,7 @@
         },
         "negative_interrogative": {
           "sequence": ["will", "subject", "not", "aux", "verb:ing", "object"],
+          "sequence_contracted": ["will", "not", "subject", "aux", "verb:ing", "object"],
           "end": "?"
         }
       }
@@ -234,6 +248,7 @@
         },
         "negative_interrogative": {
           "sequence": ["will", "subject", "not", "aux", "verb:v3", "object"],
+          "sequence_contracted": ["will", "not", "subject", "aux", "verb:v3", "object"],
           "end": "?"
         }
       }
@@ -255,6 +270,7 @@
         },
         "negative_interrogative": {
           "sequence": ["will", "subject", "not", "aux", "been", "verb:ing", "object"],
+          "sequence_contracted": ["will", "not", "subject", "aux", "been", "verb:ing", "object"],
           "end": "?"
         }
       }

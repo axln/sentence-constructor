@@ -6,10 +6,12 @@ const Helper         = require("./Helper");
 
 
 class Sentence {
-    constructor(tenseInfo, typeInfo, parts, allowContractions = true) {
+    constructor(tenseInfo, type, parts, active, allowContractions = true) {
         this.tenseInfo = tenseInfo;
         this.parts = parts;
-        this.typeInfo = typeInfo;
+        this.type = type;
+        this.typeInfo = tenseInfo.types[type];
+        this.activeVoice = active;
         this.allowContractions = allowContractions;
         //console.log('Sentence:', this.tenseInfo, this.typeInfo);
     }
@@ -58,30 +60,42 @@ class Sentence {
         }
     }
 
-    render() {
+    applyContractions(text) {
+        for (let i = 0; i < contractions.length; ++i) {
+            const [pattern, replace] = contractions[i];
+            text = text.replace(pattern, replace);
+        }
+        return text;
+    }
+
+    generateText(parts, sequence) {
         let text = '';
         let skipVerb = false;
-        for (let i = 0; i < this.typeInfo.sequence.length; ++i) {
+
+        for (let i = 0; i < sequence.length; ++i) {
             if (text !== '') {
                 text += ' ';
             }
-            const item =  this.typeInfo.sequence[i];
+            const item =  sequence[i];
             const [name, param] = item.split(':');
             switch (name) {
                 case "subject":
-                    let subject = this.parts.subject;
+                    let subject = parts.subject;
                     text += subject.spelling.subject;
                     break;
                 case "verb":
                     if (skipVerb) {
                         text = text.trim();
                     } else {
-                        text += this.renderVerb(this.parts.verb, param, this.parts.subject);
+                        text += this.renderVerb(parts.verb, param, parts.subject);
                     }
                     break;
+                case "be":
+                    text += this.renderVerb("be", param, parts.subject);
+                    break;
                 case "object":
-                    if (this.parts.object !== '') {
-                        text += this.parts.object;
+                    if (parts.object !== '') {
+                        text += parts.object;
                     } else {
                         text = text.trim();
                     }
@@ -97,19 +111,36 @@ class Sentence {
                     break;
                 case "aux":
                     let auxVerb = this.tenseInfo.aux;
-                    if (this.tenseInfo.aux_replace && this.parts.verb === this.tenseInfo.aux_replace) {
+                    if (this.tenseInfo.aux_replace && parts.verb === this.tenseInfo.aux_replace) {
                         auxVerb = this.tenseInfo.aux_replace;
                         skipVerb = true;
                     }
-                    text += this.renderVerb(auxVerb, param, this.parts.subject);
+                    text += this.renderVerb(auxVerb, param, parts.subject);
                     break;
             }
         }
+        return text;
+    }
+
+    render() {
+        let text = '';
+        let sequence = this.typeInfo.sequence;
+        if (this.activeVoice === false && this.typeInfo.sequence_passive) {
+            sequence = this.typeInfo.sequence_passive;
+        }
+
+        text = this.generateText(this.parts, sequence);
+
         if (this.allowContractions) {
-            for (let i = 0; i < contractions.length; ++i) {
-                const [pattern, replace] = contractions[i];
-                text = text.replace(pattern, replace);
+            let contractedText = this.applyContractions(text);
+            if (this.type === 'negative_interrogative' && this.typeInfo.sequence_contracted) {
+                const altText = this.generateText(this.parts, this.typeInfo.sequence_contracted);
+                if (altText !== this.applyContractions(altText)) {
+                    contractedText = this.applyContractions(altText);
+                }
             }
+
+            text = contractedText;
         }
         return Helper.capitalize(text + this.typeInfo.end);
     }

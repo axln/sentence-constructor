@@ -29,6 +29,7 @@ class App {
         this.verbCombo = document.getElementById('verb');
         this.objectText = document.getElementById('object');
         this.sentenceText = document.getElementById('sentence');
+        this.voiceCombo = document.getElementById('voice');
         this.contractCheckbox = document.getElementById('contract');
 
         this.tenseCombo.onchange = this.updateSentence.bind(this);
@@ -36,6 +37,7 @@ class App {
         this.typeCombo.onchange = this.updateSentence.bind(this);
         this.pronounCombo.onchange = this.updateSentence.bind(this);
         this.verbCombo.onchange = this.updateSentence.bind(this);
+        this.voiceCombo.onchange = this.updateSentence.bind(this);
         this.objectText.oninput = this.updateSentence.bind(this);
         this.contractCheckbox.onchange = this.updateSentence.bind(this);
     }
@@ -60,6 +62,7 @@ class App {
         const typeOption = this.typeCombo.options[this.typeCombo.selectedIndex];
         const pronounOption = this.pronounCombo.options[this.pronounCombo.selectedIndex];
         const verbOption = this.verbCombo.options[this.verbCombo.selectedIndex];
+        const voiceOption = this.voiceCombo.options[this.voiceCombo.selectedIndex];
         const allowContractions =  this.contractCheckbox.checked;
         //console.log(tenseOption.value, aspectOption.value, typeOption.value);
         const parts = {
@@ -67,7 +70,8 @@ class App {
             verb: verbOption.value,
             object: this.objectText.value
         };
-        this.generateSentence(tenseOption.value, aspectOption.value, typeOption.value, parts, allowContractions);
+        const activeVoice = voiceOption.value === 'active';
+        this.generateSentence(tenseOption.value, aspectOption.value, typeOption.value, parts, activeVoice, allowContractions);
     }
 
     fillAspectCombo() {
@@ -111,10 +115,9 @@ class App {
         }
     }
 
-    generateSentence(tense, aspect, type, parts, allowContractions) {
+    generateSentence(tense, aspect, type, parts, active, allowContractions) {
         const tenseInfo = tenses[tense][aspect];
-        const typeInfo = tenses[tense][aspect].types[type];
-        const sentence = new Sentence(tenseInfo, typeInfo, parts, allowContractions );
+        const sentence = new Sentence(tenseInfo, type, parts, active, allowContractions);
         this.sentenceText.innerHTML = sentence.render();
     }
 }
