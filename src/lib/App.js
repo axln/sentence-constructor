@@ -70,8 +70,7 @@ class App {
             verb: verbOption.value,
             object: this.objectText.value
         };
-        const activeVoice = voiceOption.value === 'active';
-        this.generateSentence(tenseOption.value, aspectOption.value, typeOption.value, parts, activeVoice, allowContractions);
+        this.generateSentence(tenseOption.value, aspectOption.value, typeOption.value, parts, voiceOption.value, allowContractions);
     }
 
     fillAspectCombo() {
@@ -115,9 +114,9 @@ class App {
         }
     }
 
-    generateSentence(tense, aspect, type, parts, active, allowContractions) {
+    generateSentence(tense, aspect, type, parts, voice, allowContractions) {
         const tenseInfo = tenses[tense][aspect];
-        const sentence = new Sentence(tenseInfo, type, parts, active, allowContractions);
+        const sentence = new Sentence(tenseInfo, type, parts, voice, allowContractions);
         this.sentenceText.innerHTML = sentence.render();
     }
 }

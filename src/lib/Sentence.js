@@ -6,12 +6,12 @@ const Helper         = require("./Helper");
 
 
 class Sentence {
-    constructor(tenseInfo, type, parts, active, allowContractions = true) {
+    constructor(tenseInfo, type, parts, voice, allowContractions) {
         this.tenseInfo = tenseInfo;
         this.parts = parts;
         this.type = type;
         this.typeInfo = tenseInfo.types[type];
-        this.activeVoice = active;
+        this.voice = voice;
         this.allowContractions = allowContractions;
         //console.log('Sentence:', this.tenseInfo, this.typeInfo);
     }
@@ -68,9 +68,10 @@ class Sentence {
         return text;
     }
 
-    generateText(parts, sequence) {
+    generateText(parts, sequenceType) {
         let text = '';
         let skipVerb = false;
+        const sequence = this.typeInfo[sequenceType];
 
         for (let i = 0; i < sequence.length; ++i) {
             if (text !== '') {
@@ -103,6 +104,9 @@ class Sentence {
                 case "not":
                     text += "not";
                     break;
+                case "being":
+                    text += "being";
+                    break;
                 case "been":
                     text += "been";
                     break;
@@ -115,7 +119,7 @@ class Sentence {
                         auxVerb = this.tenseInfo.aux_replace;
                         skipVerb = true;
                     }
-                    text += this.renderVerb(auxVerb, param, parts.subject);
+                    text += `${this.renderVerb(auxVerb, param, parts.subject)}`;
                     break;
             }
         }
@@ -124,17 +128,17 @@ class Sentence {
 
     render() {
         let text = '';
-        let sequence = this.typeInfo.sequence;
-        if (this.activeVoice === false && this.typeInfo.sequence_passive) {
-            sequence = this.typeInfo.sequence_passive;
+        let sequence = "active";
+        if (this.voice === "passive" && this.typeInfo[this.voice]) {
+            sequence = this.voice;
         }
 
         text = this.generateText(this.parts, sequence);
 
         if (this.allowContractions) {
             let contractedText = this.applyContractions(text);
-            if (this.type === 'negative_interrogative' && this.typeInfo.sequence_contracted) {
-                const altText = this.generateText(this.parts, this.typeInfo.sequence_contracted);
+            if (this.type === 'negative_interrogative' && this.typeInfo[sequence + "_contracted"]) {
+                const altText = this.generateText(this.parts,  sequence + "_contracted");
                 if (altText !== this.applyContractions(altText)) {
                     contractedText = this.applyContractions(altText);
                 }
