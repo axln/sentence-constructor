@@ -122,3 +122,14 @@ span {
 	content: "contraction";
 	color: #a48c6f;
 }
+
+.repo {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 15px;
+
+}
+a {
+	color:  dodgerblue;
+}
