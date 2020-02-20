@@ -43,6 +43,8 @@
   "try": ["tries", "trying", "tried"],
   "turn": ["turns", "turning"],
   "use": ["uses", "using", "used"],
+  "walk": ["walks", "walking"],
   "want": ["wants", "wanting"],
-  "work": ["works", "working"]
+  "work": ["works", "working"],
+  "write": ["writes", "writing"]
 }
