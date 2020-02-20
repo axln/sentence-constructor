@@ -1,2 +1,2 @@
 # Sentence Constructor
-English trainer phrase generator
+English trainer Sentence Constructor
