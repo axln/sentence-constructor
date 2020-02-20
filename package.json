@@ -4,8 +4,8 @@
   "description": "English trainer phrase generator",
   "main": "saved/app.js",
   "scripts": {
-    "watch": "watchify src/entry.js -d -o ./page/script.js",
-    "build": "browserify src/entry.js -o ./page/script.js"
+    "watch": "watchify src/entry.js -d -o ./dist/script.js",
+    "build": "browserify src/entry.js -o ./dist/script.js"
   },
   "repository": "git@github.com:axln/phrase-generator.git",
   "author": "Alexey Nesterenko <alexei.ne@gmail.com>",
