@@ -4,8 +4,13 @@ body, select, input {
 }
 
 h1 {
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: normal;
+}
+
+.desc {
+	font-size: 15px;
+	margin-bottom: 30px;
 }
 
 #tense {
@@ -35,7 +40,7 @@ h1 {
 .controls {
 	margin: 10px 0;
 }
-#sentence {
+.sentence {
 	margin: 20px 0;
 	/*font-family: monospace;*/
 	font-size: 46px;
@@ -58,7 +63,7 @@ span {
 	background-color: lightgreen;
 }
 
-#sentence > span {
+.sentence > span {
 	display: inline-block;
 	text-align: center;
 	min-width: 60px;
@@ -67,7 +72,7 @@ span {
 	border-radius: 5pt;
 }
 
-#sentence > span::before {
+.sentence > span::before {
 	display: block;
 	position: absolute;
 	top: 2px;

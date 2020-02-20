@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Sentence Constructor</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 <body>
     <h1>Sentence Constructor</h1>
-    <div class="repo"><a target="_blank" href="https://github.com/axln/sentence-constructor">GitHub Repo</a></div>
+    <div class="repo"><a target="_blank" href="https://github.com/axln/sentence-constructor">GitHub Project</a></div>
+    <div class="desc">
+        <p>This tiny app replaces huge tables of English tenses.</p>
+        <p>It allows you to choose any tense and aspect (simple, continuous, etc) with the voice (active/passive) and builds a sentence of any types (affirmative, negative, etc).</p>
+    </div>
     <div class="controls">
         Tense:
         <select id="tense"></select>
@@ -32,6 +37,6 @@
     <div class="controls">
         <input type="checkbox" id="contract"><label for="contract"> Allow contractions</label>
     </div>
-    <div id="sentence"></div>
+    <div id="sentence" class="sentence"></div>
 </body>
 </html>
