@@ -1,7 +1,5 @@
 const irregularVerbs = require("../data/irregular_verb");
 const verbs          = require("../data/verb");
-const VerbFactory    = require("./VerbFactory");
-const Do             = require("./Do");
 
 class Verb {
     constructor(params) {
