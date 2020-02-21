@@ -1,7 +1,7 @@
-const Verb = require("./Verb");
 const Be   = require("./Be");
 const Do   = require("./Do");
 const Have = require("./Have");
+const Verb = require("./Verb");
 
 module.exports = {
     create: (params) => {

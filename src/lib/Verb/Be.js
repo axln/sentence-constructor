@@ -18,7 +18,7 @@ class Be extends Verb {
                 } else {
                     return "is";
                 }
-            case "future":
+            default:
                 return "be";
         }
     }

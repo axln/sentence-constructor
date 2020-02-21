@@ -13,7 +13,7 @@ class Have extends Verb {
                 } else {
                     return "have";
                 }
-            case "future":
+            default:
                 return "have";
         }
     }

@@ -1,12 +1,12 @@
-const irregularVerbs = require("../data/irregular_verb");
-const verbs          = require("../data/verb");
+const irregularVerbs = require("../../data/irregular_verb");
+const verbs          = require("../../data/verb");
 
 class Verb {
     constructor(params) {
         this.verb    = params.verb;
         this.subject = params.subject || null;
         this.tense   = params.tense   || null;
-        this.mode    = params.mode    || null;
+        this.form    = params.form    || null;
     }
 
     renderForSubject() {
@@ -27,28 +27,42 @@ class Verb {
 
     render(line, type) {
         if (this.subject && this.tense) {
+            if (this.tense === "future") {
+                line.push({
+                    text: "will",
+                    type: "aux"
+                });
+            } else if (this.tense === "future_in_past") {
+                line.push({
+                    text: "would",
+                    type: "aux"
+                });
+            }
             line.push({
                 text: this.renderForSubject(type),
                 type
             });
         } else {
-            switch (this.mode) {
+            switch (this.form) {
                 case "v3":
                     line.push({
                         text: this.getForm(3),
-                        type
+                        type,
+                        form: "v3"
                     });
                     break;
                 case "ing":
                     line.push({
                         text: Verb.getIngForm(this.verb),
-                        type
+                        type,
+                        form: "ing"
                     });
                     break;
                 default:
                     line.push({
                         text: this.verb,
-                        type
+                        type,
+                        form: "base"
                     });
                     break;
             }

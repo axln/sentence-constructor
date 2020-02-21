@@ -13,7 +13,7 @@ class Do extends Verb {
                 } else {
                     return "do";
                 }
-            case "future":
+            default:
                 return "do";
         }
     }
