@@ -18,7 +18,7 @@ class Simple extends Aspect {
 
         if (this.verb !== "be") {
             const verbObj = VerbFactory.create(verbParams);
-            verbObj.render(line, "verb");
+            verbObj.render(line);
         }
 
         super.render(line, type, negative, contract);

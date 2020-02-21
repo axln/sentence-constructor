@@ -18,7 +18,7 @@ class PerfectContinuous extends Aspect {
             verb: this.verb,
             form: "ing"
         });
-        verbObj.render(line, "verb");
+        verbObj.render(line);
 
         super.render(line, type, negative, contract);
     }

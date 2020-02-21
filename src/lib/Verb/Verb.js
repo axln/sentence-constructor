@@ -25,7 +25,7 @@ class Verb {
         }
     }
 
-    render(line, type) {
+    render(line, type = "verb") {
         if (this.subject && this.tense) {
             if (this.tense === "future") {
                 line.push({
