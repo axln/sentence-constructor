@@ -44,6 +44,7 @@ module.exports = {
     },
 
     preprocessContractions(contractions) {
+        contractions = [...contractions];
         for (let i = 0; i < contractions.length; ++i) {
             let [pattern, replace] = contractions[i];
             const process = text => {

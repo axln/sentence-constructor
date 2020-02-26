@@ -13,7 +13,7 @@ Array.prototype.insert = function (index, item) {
 
 const Simple = require("./lib/Aspect/Simple");
 const Continuous = require("./lib/Aspect/Continuous");
-const Prefect = require("./lib/Aspect/Perfect");
+const Perfect = require("./lib/Aspect/Perfect");
 const PerfectContinuous = require("./lib/Aspect/PerfectContinuous");
 
 
@@ -21,15 +21,15 @@ window.onload = () => {
     const app = new App();
     app.run();
 
-    const subject = new Subject(pronouns.he);
-    const tense = "future_in_past";
+    /*const subject = new Subject(pronouns.he);
+    const tense = "future";
     const verb = "go";
     const passive = false;
     const type = "affirmative";
     //const type = "interrogative";
     const negative = true;
-    const allowContraction = false;
-    const TenseClass = PerfectContinuous;
+    const allowContraction = true;
+    const TenseClass = Perfect;
 
     const sentence = new TenseClass(tense, subject, passive ? "be" : verb);
     const line = [];
@@ -43,5 +43,5 @@ window.onload = () => {
     } else {
         line.push({text: "."});
     }
-    console.log("line:", JSON.stringify(line, null, 2));
+    console.log("line:", JSON.stringify(line, null, 2));*/
 };

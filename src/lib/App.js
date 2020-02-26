@@ -1,6 +1,13 @@
 const Helper = require('./Helper');
 const Sentence = require('./Sentence');
 
+const Simple = require("./Aspect/Simple");
+const Continuous = require("./Aspect/Continuous");
+const Perfect = require("./Aspect/Perfect");
+const PerfectContinuous = require("./Aspect/PerfectContinuous");
+const VerbFactory = require("./Verb/VerbFactory");
+const Subject = require("./Subject");
+
 const pronouns = require("../data/pronoun");
 const tenses = require("../data/tense");
 const verbs = require("../data/verb");
@@ -29,6 +36,7 @@ class App {
         this.verbCombo = document.getElementById('verb');
         this.objectText = document.getElementById('object');
         this.sentenceText = document.getElementById('sentence');
+        this.sentence2Text = document.getElementById('sentence2');
         this.voiceCombo = document.getElementById('voice');
         this.contractCheckbox = document.getElementById('contract');
 
@@ -114,6 +122,20 @@ class App {
         }
     }
 
+    static getAspectClass(aspect) {
+        switch (aspect) {
+            case "simple":
+                return Simple;
+            case "continuous":
+                return Continuous;
+            case "perfect":
+                return Perfect;
+            case "perfect_continuous":
+                return PerfectContinuous;
+            default: return null;
+        }
+    }
+
     generateSentence(tense, aspect, type, parts, voice, allowContractions) {
         const tenseInfo = tenses[tense][aspect];
         const sentence = new Sentence(tenseInfo, type, parts, voice, allowContractions);
@@ -126,6 +148,68 @@ class App {
             node.textContent = Helper.capitalize(node.textContent);
             break;
         }
+
+        // temporarily
+        return;
+
+        // tense engine v2
+        let AspectClass = App.getAspectClass(aspect);
+        let sentenceType;
+        let negative;
+        switch(type) {
+            case "affirmative":
+                sentenceType = "affirmative";
+                negative = false;
+                break;
+            case "negative":
+                sentenceType = "affirmative";
+                negative = true;
+                break;
+            case "interrogative":
+                sentenceType = "interrogative";
+                negative = false;
+                break;
+            case "negative_interrogative":
+                sentenceType = "interrogative";
+                negative = true;
+                break;
+
+
+        }
+        const passive = voice === "passive";
+        const subject2 = new Subject(parts.subject);
+        const sentence2 = new AspectClass(tense, subject2, passive ? "be" : parts.verb);
+        const line = [];
+        sentence2.render(line, sentenceType, negative, allowContractions);
+        if (passive) {
+            const verbObj = VerbFactory.create({verb: parts.verb, form: "v3"});
+            verbObj.render(line, "verb");
+        }
+        if (parts.object && parts.object.trim() !== "") {
+            line.push({
+                text: parts.object,
+                type: "object"
+            });
+        }
+        if (type === "interrogative") {
+            line.push({text: "?"});
+        } else {
+            line.push({text: "."});
+        }
+
+        this.sentence2Text.innerHTML = "";
+
+        line.forEach((item, index) => {
+            const div = document.createElement("div");
+            const span = document.createElement('span');
+            span.innerHTML = item.text;
+
+            if (index < line.length - 2) {
+                span.innerHTML += " "
+            }
+            div.appendChild(span);
+            this.sentence2Text.appendChild(div);
+        });
     }
 }
 

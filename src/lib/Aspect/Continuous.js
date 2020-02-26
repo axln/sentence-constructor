@@ -9,11 +9,10 @@ class Continuous extends Aspect {
     render(line, type, negative = false, contract = false) {
         this.subject.render(line);
         this.renderAux(line);
-        const verbObj = VerbFactory.create({
+        VerbFactory.create({
             verb: this.verb,
             form: "ing"
-        });
-        verbObj.render(line);
+        }).render(line);
 
         super.render(line, type, negative, contract);
     }

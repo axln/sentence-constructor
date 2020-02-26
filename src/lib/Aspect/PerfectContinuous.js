@@ -14,11 +14,10 @@ class PerfectContinuous extends Aspect {
             type: "aux",
             form: "v3"
         });
-        const verbObj = VerbFactory.create({
+        VerbFactory.create({
             verb: this.verb,
             form: "ing"
-        });
-        verbObj.render(line);
+        }).render(line);
 
         super.render(line, type, negative, contract);
     }

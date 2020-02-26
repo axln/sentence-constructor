@@ -16,9 +16,9 @@ class Simple extends Aspect {
             verbParams.subject = this.subject;
         }
 
+        // if the verb is "be", then it's already rendered as the aux verb
         if (this.verb !== "be") {
-            const verbObj = VerbFactory.create(verbParams);
-            verbObj.render(line);
+            VerbFactory.create(verbParams).render(line);
         }
 
         super.render(line, type, negative, contract);
