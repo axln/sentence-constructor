@@ -1,7 +1,7 @@
 const App = require("./lib/App");
-const pronouns = require("./data/pronoun");
+/*const pronouns = require("./data/pronoun");
 const Subject = require("./lib/Subject");
-const VerbFactory = require("./lib/Verb/VerbFactory");
+const VerbFactory = require("./lib/Verb/VerbFactory");*/
 
 Array.prototype.move = function (from, to) {
     this.splice(to, 0, this.splice(from, 1)[0]);
@@ -11,10 +11,10 @@ Array.prototype.insert = function (index, item) {
     this.splice(index, 0, item);
 };
 
-const Simple = require("./lib/Aspect/Simple");
+/*const Simple = require("./lib/Aspect/Simple");
 const Continuous = require("./lib/Aspect/Continuous");
 const Perfect = require("./lib/Aspect/Perfect");
-const PerfectContinuous = require("./lib/Aspect/PerfectContinuous");
+const PerfectContinuous = require("./lib/Aspect/PerfectContinuous");*/
 
 
 window.onload = () => {

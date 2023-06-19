@@ -40,14 +40,16 @@ class App {
         this.voiceCombo = document.getElementById('voice');
         this.contractCheckbox = document.getElementById('contract');
 
-        this.tenseCombo.onchange = this.updateSentence.bind(this);
-        this.aspectCombo.onchange = this.updateSentence.bind(this);
-        this.typeCombo.onchange = this.updateSentence.bind(this);
-        this.pronounCombo.onchange = this.updateSentence.bind(this);
-        this.verbCombo.onchange = this.updateSentence.bind(this);
-        this.voiceCombo.onchange = this.updateSentence.bind(this);
-        this.objectText.oninput = this.updateSentence.bind(this);
-        this.contractCheckbox.onchange = this.updateSentence.bind(this);
+        const changeHandler = this.updateSentence.bind(this);
+
+        this.tenseCombo.onchange = changeHandler;
+        this.aspectCombo.onchange = changeHandler;
+        this.typeCombo.onchange = changeHandler;
+        this.pronounCombo.onchange = changeHandler;
+        this.verbCombo.onchange = changeHandler;
+        this.voiceCombo.onchange = changeHandler;
+        this.objectText.oninput = changeHandler;
+        this.contractCheckbox.onchange = changeHandler;
     }
 
     run() {
@@ -137,9 +139,19 @@ class App {
     }
 
     generateSentence(tense, aspect, type, parts, voice, allowContractions) {
+        console.log('generateSentence:');
+        console.log('  tense:', tense);
+        console.log('  aspect:', aspect);
+        console.log('  type:', type);
+        console.log('  parts:', parts);
+        console.log('  voice:', voice);
+        console.log('  allowContractions:', allowContractions);
+
         const tenseInfo = tenses[tense][aspect];
         const sentence = new Sentence(tenseInfo, type, parts, voice, allowContractions);
-        this.sentenceText.innerHTML = sentence.render();
+        const renderedText = sentence.render();
+        console.log('rendered text:', renderedText)
+        this.sentenceText.innerHTML = renderedText;
         for (let i = 0; i < this.sentenceText.childNodes.length; ++i) {
             const node = this.sentenceText.childNodes[i];
             if (node.nodeType !== 1) {

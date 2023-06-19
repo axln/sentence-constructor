@@ -1,9 +1,10 @@
+const Helper         = require("./Helper");
 const specialVerbs   = require('../data/special_verb');
 const verbs          = require('../data/verb');
 const irregularVerbs = require('../data/irregular_verb');
-const Helper         = require("./Helper");
 
 const contractions = Helper.preprocessContractions(require('../data/contraction.json'));
+console.log('contractions:', contractions);
 
 class Sentence {
     constructor(tenseInfo, type, parts, voice, allowContractions) {
@@ -177,8 +178,8 @@ class Sentence {
 }
 
 function escapeHtml(html){
-    var text = document.createTextNode(html);
-    var p = document.createElement('p');
+    const text = document.createTextNode(html);
+    const p = document.createElement('p');
     p.appendChild(text);
     return p.innerHTML;
 }
